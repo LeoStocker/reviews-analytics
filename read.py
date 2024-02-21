@@ -24,3 +24,23 @@ for d in data:
 		new2.append(d)
 print('一共有', len(new2), '筆留言包含good')
 
+
+#字典查詢
+wc = {}
+for d in data:
+	word = d.split()
+	for w in word:
+		if w in wc:
+			wc[w] += 1
+		else:
+			wc[w] = 1
+while True:
+	search = input('請輸入您要找的字: ')
+	if search == '幹不查了':
+		break
+	elif search in wc:
+		print(wc[search])
+	else:
+		print('沒有這個字喔!')
+print('感謝您的查詢')
+
